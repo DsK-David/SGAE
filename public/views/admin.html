@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+</head>
+<style>
+    /* Estilos gerais */
+body {
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  background: #211A2C;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Estilos para o formulário */
+.form {
+  background-color: #312941;
+  box-shadow: 10px 12px 10px 12px #000;
+  padding: 20px;
+  border-radius: 19px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+}
+
+.form h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #4ED49D;
+}
+
+.form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #86839B;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="number"],
+.form input[type="password"],
+.form input[type="submit"] {
+  width: 80%;
+  padding: 13px;
+  margin-bottom: 10px;
+  background: #52486A;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+.form select {
+  width: 80%;
+  padding: 13px;
+  margin-bottom: 10px;
+  background: #52486A;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: #fff;
+  appearance: none; /* Remove a aparência padrão do select */
+  cursor: pointer;
+}
+
+/* Estilos para as opções do select */
+.form select option {
+  background: #52486A;
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.form input[type="submit"] {
+  background-color: #00FF8A;
+  color: #111;
+  border: none;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+</style>
+<body>
+    <div class="form">
+        <form action="/admin/auth/add/student/post" method="post">
+            <label for="nome">Nome:</label>
+<input type="text" id="nome" name="nome" required><br>
+
+<label for="contacto">Contacto:</label>
+<input type="email" id="contacto" name="contacto" required><br>
+
+<label for="turma">Turma:</label>
+<input type="text" id="turma" name="turma" required><br>
+
+<label for="professores">Professores:</label>
+<select id="professores" name="professores[]" multiple required>
+  <option value="Maria Santos">Maria Santos</option>
+  <option value="Pedro Almeida">Pedro Almeida</option>
+  <option value="Ana Ferreira">Ana Ferreira</option>
+  <option value="Fernando Pereira">Fernando Pereira</option>
+  <option value="Carla Rodrigues">Carla Rodrigues</option>
+  <option value="Rui Costa">Rui Costa</option>
+  <option value="Marta Fernandes">Marta Fernandes</option>
+  <option value="Ricardo Santos">Ricardo Santos</option>
+  <option value="Isabel Sousa">Isabel Sousa</option>
+</select><br>
+
+<label for="cni">Número de CNI (4 a 13 caracteres):</label>
+<input type="text" id="cni" name="cni" pattern=".{4,13}" required><br>
+
+            <input type="submit" value="adicionar">
+           
+
+        </form>
+    </div>
+    
+</body>
+<script>
+  const selectProfessores = document.getElementById('professores');
+
+selectProfessores.addEventListener('change', function(event) {
+  const selectedOptions = Array.from(event.target.options);
+  selectedOptions.forEach(option => {
+    option.style.backgroundColor = option.selected ? '#00FF8A' : '#52486A';
+  });
+});
+</script>
+</html>

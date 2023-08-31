@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola date</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            background: #211A2C;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .left, .right {
+            width: 70%;
+            padding: 50px;
+        }
+
+        .left {
+            color: #8DF9CF;
+           
+        }
+
+
+
+        .img img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .form {
+            background-color: #312941;
+            box-shadow: 10px 12px 10px 12px #000;
+            padding: 20px;
+            border-radius: 19px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            
+        }
+
+
+        .form h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #4ED49D;
+        }
+
+        .form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #86839B;
+        }
+
+
+        .form input[type="number"], .form input[type="password"], .form input[type="submit"] {
+            width: 80%;
+            padding: 13px;
+            margin-bottom: 10px;
+            background: #52486A;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            color: #fff;
+        }
+
+        .form input[type="submit"] {
+            background-color: #00FF8A;
+            color: #111;
+            border: none;
+            cursor: pointer;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <h1>Faça login <br> e acesse o seu boletin</h1>
+        <div class="img">
+            <img src="/assets/img/ilustration.png" alt="">
+        </div>
+    </div>
+    <div class="right">
+        <div class="form">
+            <form action="/auth/student/login" method="post">
+                <h1>Entrar</h1>
+                <label for="student_cni">Número de CNI (Cartão Nacional de Identidade)</label>
+                <input type="number" name="student_cni" class="student_cni" id="student_cni" placeholder="Insira o número de CNI">
+                <label for="password">Senha fornecida pela escola</label>
+                <input type="password" class="password" id="password" name="password" placeholder="Insira a senha">
+                <input type="submit" value="Logar">
+            </form>
+            <a href="/admin/prof/login">Sou professor</a>
+        </div>
+    </div>
+</body>
+</html>

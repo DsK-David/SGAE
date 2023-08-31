@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notas dos Alunos</title>
+  <style>
+   /* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #211A2C;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilos específicos para os alunos */
+.aluno {
+  background-color: #312941;;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.aluno h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #fff;
+}
+
+.aluno p {
+  font-size: 16px;
+  color: #fff;
+}
+
+/* Outros estilos que você queira adicionar */
+
+  </style>
+</head>
+<body>
+  <h1>Notas dos Alunos</h1>
+
+  <div id="alunos-container">
+    <!-- Os dados dos alunos serão inseridos aqui via JavaScript -->
+  </div>
+
+  <script>
+    // Seu JSON com os dados dos alunos aqui
+   
+
+    const alunosContainer = document.getElementById('alunos-container');
+
+    // Iterar sobre os alunos e criar elementos HTML para exibir suas informações
+    alunos.forEach(aluno => {
+      const alunoDiv = document.createElement('div');
+      alunoDiv.classList.add('aluno');
+
+      const nome = document.createElement('h2');
+      nome.textContent = aluno.nome;
+
+      const notas = document.createElement('p');
+      notas.textContent = `Notas: ${aluno.notas.join(', ')}`;
+
+      // Criar mais elementos HTML para outras informações (avatar, escola, etc.)
+
+      // Adicionar elementos ao div do aluno
+      alunoDiv.appendChild(nome);
+      alunoDiv.appendChild(notas);
+
+      // Adicionar div do aluno ao container de alunos
+      alunosContainer.appendChild(alunoDiv);
+    });
+  </script>
+</body>
+</html>
