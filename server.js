@@ -233,7 +233,7 @@ app.post('/auth/student/login', async (req, res) => {
   };
   
   dataStudent.push(output);
-  res.send('Aluno adicionado');
+  res.redirect('/admin/auth/add/student/');
   console.log(output);
 });
 
