@@ -72,4 +72,4 @@ Contribuições são bem-vindas! :tada: Se você gostaria de contribuir para est
 
   
 
-Este projeto está licenciado sob a [ISC License](LICENSE).
+Este projeto está licenciado sob a [MIT License](LICENSE).
