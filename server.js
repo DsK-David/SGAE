@@ -161,14 +161,14 @@ app.post('/auth/student/login', async (req, res) => {
     const password = req.body.password;
   
     try {
-      const response = await axios.get('http://localhost:3000/admin/auth/add/student/api');
+      const response = await axios.get('http://localhost:3000/admin/auth/add/students/api');
       const usersData = response.data;
       console.log(usersData)
   
       const user = usersData.find(userData => userData.cni === cni && userData.password === password);
   
       if (user) {
-        res.redirect('/app/home');
+        res.redirect('/notas');
       } else {
         res.status(401).send('Credenciais inválidas');
       }

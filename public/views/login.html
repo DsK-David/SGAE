@@ -6,78 +6,111 @@
     <title>Escola date</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100vh;
-            background: #211A2C;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #211A2C;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
-        .left, .right {
-            width: 70%;
-            padding: 50px;
-        }
+.left, .right {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
-        .left {
-            color: #8DF9CF;
-           
-        }
+.left {
+    color: #8DF9CF;
+}
 
+.img img {
+    max-width: 100%;
+    height: auto;
+}
 
+.form {
+    background-color: #312941;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 19px;
+    text-align: center;
+}
 
-        .img img {
-            max-width: 100%;
-            height: auto;
-        }
+.form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4ED49D;
+}
 
-        .form {
-            background-color: #312941;
-            box-shadow: 10px 12px 10px 12px #000;
-            padding: 20px;
-            border-radius: 19px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-            
-        }
+.form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #86839B;
+}
 
+.form input[type="text"], .form input[type="password"], .form input[type="submit"] {
+    width: 90%;
+    padding: 13px;
+    margin-bottom: 10px;
+    background: #52486A;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: #fff;
+}
 
-        .form h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #4ED49D;
-        }
+.form input[type="submit"] {
+    background-color: #00FF8A;
+    color: #111;
+    border: none;
+    cursor: pointer;
+    font-weight: 900;
+}
 
-        .form label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #86839B;
-        }
+/* Media query para telas menores que desktop */
+@media (max-width: 1024px) {
+    .left, .right {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+    }
+    .img {
+        display: none;
+    }
+}
 
+/* Media query para telas menores que tablets */
+@media (max-width: 768px) {
+    .left, .right {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+    }
+    .img {
+        display: none;
+    }
+}
 
-        .form input[type="number"], input[type="text"], .form input[type="password"], .form input[type="submit"] {
-            width: 80%;
-            padding: 13px;
-            margin-bottom: 10px;
-            background: #52486A;
-            border-radius: 10px;
-            border: none;
-            outline: none;
-            color: #fff;
-        }
-
-        .form input[type="submit"] {
-            background-color: #00FF8A;
-            color: #111;
-            border: none;
-            cursor: pointer;
-            font-weight: 900;
-        }
+/* Media query para telas menores que smartphones */
+@media (max-width: 480px) {
+       .right {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+    }
+    .left{
+        display: none;
+    }
+    .img {
+        display: none;
+    }
+}
     </style>
 </head>
 <body>
@@ -90,7 +123,7 @@
     <div class="right">
         <div class="form">
             <form action="/auth/profs/login" method="post">
-                <h1>Entrar</h1>
+                <h1>Bem vindo professor</h1>
                 <label for="prof_name">Seu Nome</label>
                 <input type="text" name="prof_name" class="prof_name" id="prof_name" placeholder="Insira o seu Nome">
                 <label for="password">Senha fornecida pela escola</label>
