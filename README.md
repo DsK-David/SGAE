@@ -73,3 +73,31 @@ Contribuições são bem-vindas! :tada: Se você gostaria de contribuir para est
   
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
+
+
+# explicando as rotas
+Aqui está uma descrição do que cada rota faz no  código:
+
+1. **`express.static('public')`**: Este middleware serve arquivos estáticos, como imagens, CSS e JavaScript, localizados na pasta "public" do seu projeto.
+
+2. **`GET /`**: Quando um usuário acessa a raiz do seu site (http://seusite.com/), esta rota envia o arquivo "index.html" localizado na pasta "public/views" como resposta.
+
+3. **`GET /teste/api/students`**: Esta rota fornece dados JSON da variável `users`.
+
+4. **`GET /api/professors`**: Esta rota fornece dados JSON da variável `profs_arrays`.
+
+5. **`GET /auth/professors/login`**: Quando um usuário acessa esta rota, o arquivo "login.html" localizado na pasta "public/views" é enviado como resposta. Isso  é a página de login para professores.
+
+6. **`GET /app/home`**: Esta rota envia o arquivo "home.html" localizado na pasta "public/views" como resposta. é a página inicial do aplicativo.
+
+7. **`GET /auth/new/student`**: Quando um usuário acessa esta rota, o arquivo "admin.html" localizado na pasta "public/views" é enviado como resposta. Isso é página para adicionar novos alunos.
+
+8. **`GET /notas`**: Quando um usuário acessa esta rota, o arquivo "notas.html" localizado na pasta "public/views" é enviado como resposta. Essa rota  exibe as notas dos alunos.
+
+9. **`GET /api/students`**: Esta rota fornece dados JSON da variável `dataStudent`.
+
+10. **`POST /auth/student/login`**: Esta rota processa uma solicitação de login de aluno. Ela verifica se as credenciais fornecidas correspondem aos dados armazenados em `/teste/api/students` e redireciona o usuário para `/notas` se o login for bem-sucedido.
+
+11. **`POST /auth/profs/login`**: Esta rota processa uma solicitação de login de professor. Ela verifica se as credenciais fornecidas correspondem aos dados armazenados em `/api/professors` e redireciona o usuário para `/auth/new/student/` se o login for bem-sucedido.
+
+12. **`POST /auth/add/new/student/api`**: Esta rota é usada para adicionar um novo aluno. Ela recebe dados do formulário e os processa, verificando se o CNI (Cadastro Nacional de Identificação) e a senha são exclusivos. Se bem-sucedido, os detalhes do aluno são adicionados a `dataStudent` e o usuário é redirecionado para `/auth/new/student/`.

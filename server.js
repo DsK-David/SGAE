@@ -128,26 +128,26 @@ app.use(express.static('public'))
 app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/public/views/index.html')
 })
-app.get('/admin/auth/students/api', (req, res) => {
+app.get('/teste/api/students', (req, res) => {
     res.json(users);
   });
-  app.get('/admin/auth/profs/api', (req, res) => {
+  app.get('/api/professors', (req, res) => {
     res.json(profs_arrays);
   });
-  app.get('/admin/prof/login', (req, res) => {
+  app.get('/auth/professors/login', (req, res) => {
     res.sendFile(__dirname+'/public/views/login.html')
   });
   app.get('/app/home', (req, res) => {
     res.sendFile(__dirname+'/public/views/home.html')
   });
-  app.get('/admin/auth/add/student/', (req, res) => {
+  app.get('auth/new/student', (req, res) => {
     res.sendFile(__dirname+'/public/views/admin.html')
   });
   app.get('/notas', (req, res) => {
     res.sendFile(__dirname+'/public/views/notas.html')
   });
   const dataStudent = []
-  app.get('/admin/auth/add/students/api',(req,res)=>{
+  app.get('/api/students',(req,res)=>{
     res.send(dataStudent)
   })
 
@@ -161,7 +161,7 @@ app.post('/auth/student/login', async (req, res) => {
     const password = req.body.password;
   
     try {
-      const response = await axios.get('http://localhost:3000/admin/auth/add/students/api');
+      const response = await axios.get('http://localhost:3000/teste/api/students');
       const usersData = response.data;
       console.log(usersData)
   
@@ -183,13 +183,13 @@ app.post('/auth/student/login', async (req, res) => {
     const password = req.body.password;
   
     try {
-      const response = await axios.get('http://localhost:3000/admin/auth/profs/api');
+      const response = await axios.get('http://localhost:3000/api/professors');
       const usersData = response.data;
   
       const user = usersData.find(userData => userData.name === name && userData.password === password);
   
       if (user) {
-        res.redirect('/admin/auth/add/student/');
+        res.redirect('/auth/new/student/');
       } else {
         res.status(401).send('Credenciais inválidas');
       }
@@ -199,7 +199,7 @@ app.post('/auth/student/login', async (req, res) => {
     }
   });
 
- app.post('/admin/auth/add/student/post', (req, res) => {
+ app.post('/auth/add/new/student/api', (req, res) => {
   const student_name = req.body.nome;
   const student_contact = req.body.contacto;
   const student_class = req.body.turma;
@@ -233,7 +233,7 @@ app.post('/auth/student/login', async (req, res) => {
   };
   
   dataStudent.push(output);
-  res.redirect('/admin/auth/add/student/');
+  res.redirect('/auth/new/student/');
   console.log(output);
 });
 
