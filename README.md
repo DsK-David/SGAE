@@ -34,7 +34,8 @@ Siga estas etapas para instalar o projeto em sua máquina:
 
 3. Instale as dependências: `npm install`
 
-4. use o comando `npm run dev` ou `npm run start` para rodar o projeto na maquina
+4. use o comando `npm run dev` caso tiver o nodemon instalado globalmente para rodar o projeto
+ e use o`npm run start` para rodar o projeto na maquina caso não tenha nodemon
 
 5. Acesse no seu :computer: a URL `https://localhost:3000/`
 
